@@ -5,7 +5,7 @@ import Media from './src/playlist/components/media';
 class App extends Component{
     render(){
         return (
-            <Media />
+                <Media />
         )
     }
 }
