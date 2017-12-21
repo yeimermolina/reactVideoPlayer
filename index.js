@@ -5,7 +5,11 @@ import Media from './src/playlist/components/media';
 class App extends Component{
     render(){
         return (
-                <Media />
+                <Media 
+                    title="React Fundamentals"
+                    author="@yeimergabriel"
+                    image="./images/covers/bitcoin.jpg"
+                />
         )
     }
 }
