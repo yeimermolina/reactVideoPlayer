@@ -9,6 +9,7 @@ class App extends Component{
                     title="React Fundamentals"
                     author="@yeimergabriel"
                     image="./images/covers/bitcoin.jpg"
+                    type="video"
                 />
         )
     }
