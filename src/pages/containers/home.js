@@ -5,6 +5,7 @@ import Related from '../components/related';
 import ModalContainer from '../../widgets/containers/modal';
 import Modal from '../../widgets/components/modal';
 import HandleError from '../../error/containers/handleError';
+import VideoPlayer from '../../player/containers/videoPlayer';
 
 class Home extends Component {
 
@@ -37,7 +38,8 @@ class Home extends Component {
             <Modal 
               handleClick={this.handleCloseModalClick}
             >
-              <h1>Esto es un portal</h1>
+              
+          <VideoPlayer /> 
             </Modal>
           </ModalContainer>
           : null
