@@ -8,6 +8,7 @@ import VideoControls from '../components/videoControls';
 import ProgressBar from '../components/progressBar';
 import Spinner from '../components/spinner';
 import Volume from '../components/volume';
+import FullScreen from '../components/fullScreen';
 import { formattedTime } from '../../utilities';
 
 class VideoPlayer extends Component {
@@ -77,9 +78,29 @@ class VideoPlayer extends Component {
         })
     }
 
+    setRef = element => {
+        this.player = element
+    }
+
+    handleFullScreenClick = (event) => {
+        if(document.webkitIsFullScreen){
+            document.webkitExitFullscreen()
+          } else if(document.mozFullScreen) {
+            document.mozCancelFullScreen()
+          } else {
+              if ( this.player.webkitRequestFullscreen ) {
+              this.player.webkitRequestFullscreen()
+            } else if ( this.player.mozRequestFullScreen ) {
+              this.player.mozRequestFullScreen()
+            }
+          }
+    }
+
     render(){
       return (
-          <VideoPlayerLayout>
+          <VideoPlayerLayout 
+            setRef={this.setRef}
+          >
               <Title 
                 title="Prueba"
               />
@@ -102,6 +123,10 @@ class VideoPlayer extends Component {
                     handleVolumeChange={this.handleVolumeChange}
                     handleVolumeClick={this.handleVolumeClick}
                     value={this.state.volumeValue}
+                />
+
+                <FullScreen
+                    handleFullScreenClick={this.handleFullScreenClick}
                 />
               </VideoControls>
               
