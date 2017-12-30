@@ -25,7 +25,7 @@
     cursor: pointer;
   }
   
-  .Modal-close:after {
+  .Modal-close:before {
     content: "X";
     font-weight: bold;
     font-size: 30px;
