@@ -1,3 +1,12 @@
 .Related {
     width: 300px;
+    color: white;
   }
+
+.Related h3{
+  padding: 10px;
+}
+
+.Related li {
+  padding: 10px;
+}
